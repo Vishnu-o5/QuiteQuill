@@ -1,18 +1,14 @@
 import React,{useState} from "react";
 import { FaLock, FaUser } from "react-icons/fa"
+import {useNavigate} from "react-router-dom"
 
-const Login = () =>{
+const Login = () => {
+    const [email,setEmail] = useState("");
+    const [password, setPassword] =useState("");
+    const [error,SetError]= useState("");
+    
+    
     return(
-        // <div className="w-screen md:w-screen md:h-screen bg-gradient-to-r from-red-300 via-orange-100 border-t-rose-100 ">
-           
-        //     <div className="">
-        //        <form>
-        //         <input>Name</input>
-        //        </form>
-        //     </div>
-           
-        
-        // </div>
         <div className="w-screen md:w-screen md:h-screen bg-gradient-to-r from-blue-300 via-cyan-100 to-white flex items-center justify-center ">
             <div className="max-w-sm w-full rounded-2xl bg-white p-6 opacity-50 shadow-2xl drop-shadow-2xl backdrop-blur-sm" >
                 <h2 className="font-sans text-4xl font-bold text-center text-blue-800 mt-2 mb-6 ">Login</h2>
@@ -21,6 +17,7 @@ const Login = () =>{
                         <input className="w-full px-10 py-2 pr-4 rounded-lg bg-blue-50 focus:outline-blue-600 focus:ring-blue-700  shadow-cyan-200 shadow-2xs drop-shadow-lg"  
                         type="email"
                         id="email"
+                        value={email}
                         placeholder="Username/ Email"
                         />
                         <FaUser className="absolute left-3 top-3 text-blue-500"/> 
